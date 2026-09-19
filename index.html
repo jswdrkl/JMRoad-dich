@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="mr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>एका खड्डयाचे ‘पडणे’… आणि त्याचे नशीब</title>
+
+  <!-- Google Fonts: IBM Plex Sans & IBM Plex Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            marathi: ['"IBM Plex Sans Devanagari"', '"IBM Plex Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Devanagari', 'IBM Plex Sans', sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Justified text styling with non-breaking words for Marathi */
+    .marathi-content {
+      text-align: justify;
+      text-justify: inter-word;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      hyphens: none;
+      -webkit-hyphens: none;
+    }
+
+    /* SVG Keyframe Animations */
+    @keyframes pulse-light {
+      0%, 100% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    @keyframes car-pass {
+      0% { transform: translateX(-140px); }
+      100% { transform: translateX(960px); }
+    }
+
+    @keyframes scooter-pass {
+      0% { transform: translateX(960px); }
+      100% { transform: translateX(-140px); }
+    }
+
+    @keyframes float-steam {
+      0% { transform: translateY(0) scale(0.8); opacity: 0.8; }
+      50% { transform: translateY(-10px) scale(1.1); opacity: 0.5; }
+      100% { transform: translateY(-22px) scale(1.3); opacity: 0; }
+    }
+
+    @keyframes gentle-sway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(2deg); }
+    }
+
+    @keyframes caution-flash {
+      0%, 100% { filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
+      50% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.95)); }
+    }
+
+    .anim-light-red {
+      animation: pulse-light 1.3s infinite ease-in-out;
+      transform-origin: center;
+    }
+    
+    .anim-light-amber {
+      animation: pulse-light 1.1s infinite ease-in-out 0.4s;
+      transform-origin: center;
+    }
+
+    .anim-car {
+      animation: car-pass 14s linear infinite;
+    }
+
+    .anim-scooter {
+      animation: scooter-pass 9s linear infinite;
+    }
+
+    .anim-steam-1 {
+      animation: float-steam 2.2s infinite ease-out;
+      transform-origin: center;
+    }
+
+    .anim-steam-2 {
+      animation: float-steam 2.5s infinite ease-out 0.7s;
+      transform-origin: center;
+    }
+
+    .anim-steam-3 {
+      animation: float-steam 2s infinite ease-out 1.3s;
+      transform-origin: center;
+    }
+
+    .anim-tree {
+      animation: gentle-sway 4s ease-in-out infinite alternate;
+      transform-origin: bottom center;
+    }
+
+    .anim-caution {
+      animation: caution-flash 2s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-[#F8F9FA] text-[#1E293B] dark:bg-[#0B1120] dark:text-[#E2E8F0] transition-colors duration-300 min-h-screen">
+
+  <!-- Top Minimal Action Bar containing ONLY Theme and Share Buttons -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-[#F8F9FA]/80 dark:bg-[#0B1120]/80 border-b border-slate-200/70 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-3 flex justify-end items-center gap-2.5">
+      <!-- Share Button -->
+      <button id="shareButton" type="button" aria-label="शेअर करा" class="inline-flex items-center justify-center p-2.5 rounded-xl bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-95 transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"></path>
+        </svg>
+      </button>
+
+      <!-- Theme Toggle Button -->
+      <button id="themeToggle" type="button" aria-label="थीम बदला" class="inline-flex items-center justify-center p-2.5 rounded-xl bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-95 transition-all">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg id="sunIcon" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg id="moonIcon" class="w-5 h-5 block dark:hidden text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <article class="space-y-7 sm:space-y-8 text-base sm:text-lg leading-[1.8] sm:leading-[1.95] text-slate-800 dark:text-slate-200">
+      
+      <!-- Title -->
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white pt-2 pb-1 marathi-content font-marathi">
+        एका खड्डयाचे ‘पडणे’… आणि त्याचे नशीब
+      </h1>
+
+      <!-- Animated SVG Illustration: JM Road, Sambhaji Udyan Trees, Barricades, Pothole Repair Work -->
+      <div class="w-full my-6 rounded-2xl overflow-hidden shadow-lg border border-slate-200/90 dark:border-slate-700/80 bg-slate-900/5">
+        <svg viewBox="0 0 850 420" class="w-full h-auto block" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JM Road Sambhaji Park Road Repair Work Pune">
+          <defs>
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#38bdf8" />
+              <stop offset="60%" stop-color="#bae6fd" />
+              <stop offset="100%" stop-color="#e0f2fe" />
+            </linearGradient>
+
+            <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#334155" />
+              <stop offset="100%" stop-color="#1e293b" />
+            </linearGradient>
+
+            <pattern id="barrierStripe" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="12" height="24" fill="#ef4444" />
+              <rect x="12" width="12" height="24" fill="#ffffff" />
+            </pattern>
+
+            <radialGradient id="holeGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#020617" />
+              <stop offset="70%" stop-color="#0f172a" />
+              <stop offset="100%" stop-color="#1e293b" />
+            </radialGradient>
+          </defs>
+
+          <!-- Sky & Background -->
+          <rect width="850" height="420" fill="url(#skyGrad)" />
+
+          <!-- Sambhaji Garden Background Trees / Greenery -->
+          <g class="anim-tree">
+            <!-- Green foliage layers -->
+            <circle cx="90" cy="180" r="75" fill="#15803d" opacity="0.8" />
+            <circle cx="160" cy="165" r="85" fill="#16a34a" opacity="0.9" />
+            <circle cx="230" cy="190" r="70" fill="#22c55e" opacity="0.85" />
+            <circle cx="310" cy="175" r="80" fill="#15803d" opacity="0.9" />
+            <circle cx="400" cy="185" r="75" fill="#16a34a" opacity="0.85" />
+            <circle cx="480" cy="170" r="80" fill="#22c55e" opacity="0.9" />
+            <circle cx="560" cy="180" r="70" fill="#15803d" opacity="0.85" />
+            <circle cx="650" cy="165" r="85" fill="#16a34a" opacity="0.9" />
+            <circle cx="750" cy="175" r="80" fill="#15803d" opacity="0.85" />
+            <!-- Park boundary wall -->
+            <rect x="0" y="210" width="850" height="30" fill="#94a3b8" />
+            <rect x="0" y="210" width="850" height="6" fill="#cbd5e1" />
+          </g>
+
+          <!-- Sambhaji Udyan Entrance Arch / Plaque Sign -->
+          <g transform="translate(70, 130)">
+            <rect x="0" y="0" width="135" height="38" rx="8" fill="#047857" stroke="#ffffff" stroke-width="2" />
+            <text x="67" y="24" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">संभाजी उद्यान</text>
+            <line x1="20" y1="38" x2="20" y2="90" stroke="#64748b" stroke-width="4" />
+            <line x1="115" y1="38" x2="115" y2="90" stroke="#64748b" stroke-width="4" />
+          </g>
+
+          <!-- Famous Pune Street Sign: JM Road -->
+          <g transform="translate(670, 95)">
+            <line x1="80" y1="65" x2="80" y2="150" stroke="#475569" stroke-width="6" />
+            <rect x="0" y="10" width="160" height="55" rx="8" fill="#1e3a8a" stroke="#ffffff" stroke-width="2.5" />
+            <text x="80" y="32" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">जंगली महाराज रस्ता</text>
+            <text x="80" y="52" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="sans-serif">J. M. ROAD</text>
+          </g>
+
+          <!-- Pavement / Footpath (Cobblestones of Pune Walkway) -->
+          <rect x="0" y="235" width="850" height="35" fill="#cbd5e1" />
+          <line x1="0" y1="270" x2="850" y2="270" stroke="#f1f5f9" stroke-width="2" />
+
+          <!-- Road Surface (Wide JM Road) -->
+          <rect x="0" y="270" width="850" height="150" fill="url(#roadGrad)" />
+
+          <!-- Lane Divider Markings -->
+          <g stroke="#f8fafc" stroke-width="4" stroke-dasharray="35 25" opacity="0.85">
+            <line x1="0" y1="340" x2="850" y2="340" />
+          </g>
+
+          <!-- Passing Pune Car (Background Lane) -->
+          <g class="anim-car" opacity="0.95">
+            <g transform="translate(0, 275)">
+              <rect x="15" y="18" width="80" height="28" rx="6" fill="#3b82f6" />
+              <path d="M28 18 L38 6 L72 6 L82 18 Z" fill="#60a5fa" />
+              <circle cx="34" cy="46" r="8" fill="#0f172a" />
+              <circle cx="34" cy="46" r="4" fill="#94a3b8" />
+              <circle cx="76" cy="46" r="8" fill="#0f172a" />
+              <circle cx="76" cy="46" r="4" fill="#94a3b8" />
+              <!-- Headlight beam -->
+              <polygon points="95,30 145,22 145,42" fill="#fef08a" opacity="0.35" />
+            </g>
+          </g>
+
+          <!-- Passing Pune Two-Wheeler / Scooter (Foreground Lane) -->
+          <g class="anim-scooter">
+            <g transform="translate(0, 365)">
+              <circle cx="20" cy="18" r="9" fill="#0f172a" />
+              <circle cx="65" cy="18" r="9" fill="#0f172a" />
+              <path d="M20 18 L35 15 L45 5 L55 5 L60 18" stroke="#ef4444" stroke-width="5" fill="none" stroke-linecap="round" />
+              <!-- Rider helmet -->
+              <circle cx="42" cy="-12" r="7" fill="#f59e0b" />
+              <!-- Scooter headlight -->
+              <polygon points="12,10 -30,5 -30,22" fill="#fef08a" opacity="0.4" />
+            </g>
+          </g>
+
+          <!-- Pothole Incident Zone & Municipal Repair Activity -->
+          <g transform="translate(360, 310)">
+            
+            <!-- The Sudden Pothole / Bhugdaad -->
+            <ellipse cx="65" cy="45" rx="72" ry="24" fill="url(#holeGrad)" />
+            <ellipse cx="65" cy="45" rx="60" ry="18" fill="#020617" />
+            <ellipse cx="65" cy="45" rx="55" ry="14" fill="#111827" stroke="#334155" stroke-width="3" />
+            
+            <!-- Chamber / Stormwater Drain Lid brought to level (समपातळीत झाकण) -->
+            <ellipse cx="65" cy="45" rx="42" ry="10" fill="#374151" stroke="#9ca3af" stroke-width="2" />
+            <line x1="35" y1="45" x2="95" y2="45" stroke="#111827" stroke-width="2" />
+            <line x1="45" y1="41" x2="85" y2="41" stroke="#111827" stroke-width="1.5" />
+            <line x1="45" y1="49" x2="85" y2="49" stroke="#111827" stroke-width="1.5" />
+
+            <!-- Asphalt Steam / Repair Smoke (उकळत्या डांबराची वाफ) -->
+            <g fill="#94a3b8">
+              <circle class="anim-steam-1" cx="45" cy="30" r="7" />
+              <circle class="anim-steam-2" cx="70" cy="25" r="9" />
+              <circle class="anim-steam-3" cx="90" cy="32" r="6" />
+            </g>
+
+            <!-- Fresh Asphalt Patch Ring -->
+            <ellipse cx="65" cy="45" rx="80" ry="28" fill="none" stroke="#000000" stroke-width="4" stroke-dasharray="8 4" opacity="0.6" />
+
+            <!-- Left Municipal Barricade (पडदानशीन ब्यारीकेड) -->
+            <g transform="translate(-55, -20)">
+              <rect x="0" y="8" width="85" height="34" rx="4" fill="url(#barrierStripe)" stroke="#991b1b" stroke-width="2" />
+              <rect x="10" y="42" width="6" height="32" fill="#475569" />
+              <rect x="69" y="42" width="6" height="32" fill="#475569" />
+              <rect x="3" y="72" width="20" height="4" rx="2" fill="#1e293b" />
+              <rect x="62" y="72" width="20" height="4" rx="2" fill="#1e293b" />
+              <!-- Caution Light Flash -->
+              <circle cx="42" cy="0" r="7" fill="#f59e0b" class="anim-light-amber" />
+              <circle cx="42" cy="0" r="3" fill="#ffffff" />
+            </g>
+
+            <!-- Right Municipal Barricade -->
+            <g transform="translate(105, -15)">
+              <rect x="0" y="8" width="85" height="34" rx="4" fill="url(#barrierStripe)" stroke="#991b1b" stroke-width="2" />
+              <rect x="10" y="42" width="6" height="32" fill="#475569" />
+              <rect x="69" y="42" width="6" height="32" fill="#475569" />
+              <rect x="3" y="72" width="20" height="4" rx="2" fill="#1e293b" />
+              <rect x="62" y="72" width="20" height="4" rx="2" fill="#1e293b" />
+              <!-- Flashing Red Police / Alert Light -->
+              <circle cx="42" cy="0" r="7" fill="#ef4444" class="anim-light-red" />
+              <circle cx="42" cy="0" r="3" fill="#ffffff" />
+            </g>
+
+            <!-- Traffic Caution Cone (वाहतूक नियंत्रण) -->
+            <g transform="translate(25, 45)">
+              <polygon points="12,0 3,36 21,36" fill="#ea580c" />
+              <polygon points="10,12 5,22 19,22 14,12" fill="#ffffff" />
+              <rect x="0" y="36" width="24" height="4" rx="2" fill="#1e293b" />
+            </g>
+
+            <g transform="translate(85, 52)">
+              <polygon points="12,0 3,36 21,36" fill="#ea580c" />
+              <polygon points="10,12 5,22 19,22 14,12" fill="#ffffff" />
+              <rect x="0" y="36" width="24" height="4" rx="2" fill="#1e293b" />
+            </g>
+          </g>
+
+          <!-- PMC Path Vibhag Action Banner Strip on Roadside -->
+          <g transform="translate(390, 246)" class="anim-caution">
+            <rect x="0" y="0" width="190" height="22" rx="4" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+            <text x="95" y="15" font-size="11" font-weight="800" fill="#78350f" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">मनपा पथ विभाग • तात्काळ दुरुस्ती</text>
+          </g>
+        </svg>
+      </div>
+
+      <p class="marathi-content font-marathi">
+        तसे पुणेकरांना आणि पुणे शहरातील रस्त्यांना ‘खड्डे’ या प्रकाराचे काहीच नाविन्य नाहीये. किंबहुना सगळ्या राज्यातच ही परिस्थिती आहे. राजधानी मुंबई देखील यातून सुटलेली नाही. रस्ता म्हणजे खड्डे किंवा खड्ड्यांतून कसाबसा असलेला रस्ता हे आयुष्याचे गृहीत आहे.
+      </p>
+
+      <p class="marathi-content font-marathi">
+        रस्त्यांवरचे खड्डे - का?, कुठे?, केंव्हा?, कधी पडतात हे पुणेकरांना गेल्या अनेक दशकांपासून पडलेले कोडे आहे. या कोडे सोडवणुकीवर पुण्यातील अनेक कोपरे, गल्ल्या, वाडे, इमारती, पेठा, अमृततुल्ये, मिसळ जॉइंट्स, मॉल्स आणि कॉम्प्लेक्सेस; बालवाड्या, शाळा, महाविद्यालये; नाट्य आणि चित्रपटगृहे; लोहगाव विमानतळ; नामदार गोपाळकृष्ण गोखले उर्फ ‘एफसी’, लक्ष्मी, महात्मा गांधी म्हणजे ‘एमजी’, केळकर, कुमठेकर, शास्त्री, टिळक, थोरले बाजीराव, शिवाजी महाराज, बोट क्लब, समस्त ‘डीपी’ आणि इतर रस्ते; ‘केपी’, मॉडेल कॉलनी, पुण्यातील एकमेव आणि विस्ताराने बराच मोठा असलेला ‘डीजी’ उर्फ ‘डेक्कन जिमखाना’, एकमेवद्वितीय ‘मंडई’, तुळशीबाग, सारसबाग, स्वारगेट, पुलगेट, फडगेट, रामोशी गेट, कोथरूड, बाणेर, पाषाण, बावधन, बालेवाडी, पुणे विद्यापीठ, जुना बाजार, मार्केट यार्ड, रेल्वे स्टेशन, रेसकोर्स या ठिकाणची पुणेकरांची हक्काची व्यासपीठे; झालंच तर चांदणी चौक, हडपसर गाडीतळ ही ठिकाणे; गृहनिर्माण सोसायटयांपासून सुरू होत होत शनिवारवाडा, महापालिकेची स्थायी समिती, सर्वसाधारण सभा, राज्याची विधानसभा, देशाची संसद आणि अगदी अलीकडे राष्ट्रपती भवन इथपर्यंत अनेक चर्चा, संवाद, परिसंवाद झालेले आहेत. इतके महत्व त्यांच्या ‘असण्याला’ आणि अगणित आश्वासने त्यांच्या ‘नसण्याला’ मिळून देखील ते; म्हणजे या सर्व ठिकाणच्या रस्त्यांवरचे खड्डे ‘टस की मस’ न होता ‘जस्सेच्या तस्से’ आहेत.
+      </p>
+
+      <p class="marathi-content font-marathi">
+        ‘खड्डेकारणां’च्या या चर्चा आणि परिसंवाद आजपावेतो कुठे कुठे झाले यांची यादी करताना त्यात पुण्यातीलच एका रस्त्याचा उल्लेख ‘शिताफीने टाळला’ आहे हे एव्हाना चाणाक्ष पुणेकरांच्या नजरेत नक्कीच भरले असेल. तो म्हणजे ‘जेएम’ अर्थात सद्गुरू जंगली महाराज रस्ता.
+      </p>
+
+      <p class="marathi-content font-marathi">
+        सी.ओ.ई.पी. अर्थात इंजीनीयरिंग कॉलेजपाशी सुरू होऊन; जिथे चालत रस्ता ओलांडण्यासाठी ‘पायऱ्या उरतून चढाव्या लागतात आणि वाहनांना रस्ता चढून उतरावा लागतो’ अशा डेक्कन जिमखान्यावरच्या ‘गरवारे अर्ध-भुयारी मार्ग’ या अद्वितीय ठिकाणी संपणाऱ्या या सुप्रसिद्ध रस्त्याचा ‘खड्डेविरहित रस्ता’ हा लौकिक सूर्यमालेपल्याड गेलेल्या व्हॉयेजर यानात बसवलेल्या गोल्ड रेकॉर्ड मधे देखील नोंदवलेला असणार इतका प्रसिद्ध आहे. १९६० च्या दशकात एका ‘जुन्या’ कॉन्ट्रॅक्टरने बनवलेला हा रस्ता चाळीस वर्षे गुळगुळीत होता. त्याची महती गुळगुळीत असली तरी भीतीदायक असल्यानेच दशकभरापूर्वी पालिकेने तो रुंद करून नव्याने बांधला तेव्हाही बरेच चर्वतिचर्वण झाले होते आणि बांधणाऱ्या कंत्राटदाराने देखील ते काम आरशासारखे चकचकीत करून साक्षात पुणेकरांना खजील केले!
+      </p>
+
+      <p class="marathi-content font-marathi">
+        पण काल अचानक आक्रीत घडले. संभाजी उद्यानाजवळ ‘जेएम’ रस्त्याला नुसता खड्डाच नाही तर चक्क भगदाड की हो पडले! मोठी बातमी. तात्काळ व्हायरल झाली. “ये क्या हुआ, कब हुआ, कैसे हुआ” म्हणत आख्खीच्याआख्खी महापालिका तिथे दाखल झाली. त्या भगदाडाच्या आजूबाजूस ब्यारीकेड लावून त्याला पडदानशीन केले गेले. वाहनांना वॉर्न करायला ट्रॅफिक पोलीस आले. नुसते ‘काय की बुवा’ न म्हणता ‘असे का बरे झाले असावे’ पासून ‘असे झालेच कसे’ इथपर्यंतची चर्चा पुणेकरांनी गल्लोगल्ली आणि वाचकांच्या पत्रव्यवहारात करण्याआधी चक्क पालिकेच्या ‘पथ विभागाच्या’ अधिकारी लोकांनी केली. तो बहुचर्चित ‘खड्डा’ एक भूतो न भविष्यती अशी कृती करत कधी नव्हे तो आजूबाजूने ‘ओपन’ केला गेला आणि पुन्हा ‘पडू’ नये अशा बेताने नीट भरून घेत तिथले पावसाळी गटाराचे झाकण चक्कचक्क रस्त्याच्या ‘समपातळीत’ लावून करून ‘संपूर्ण दुरुस्ती’ केली गेली. झाल्या कामाची फोटोसह जारी केली गेलेली प्रेस-नोट सगळ्या वृत्तपत्रांनी ठळकपणे छापली.
+      </p>
+
+      <p class="marathi-content font-marathi">
+        खड्ड्यासारखा खड्डा. पण त्याचे ‘पडणे’ नशीबवान ‘जेएम’ रस्त्यावर असल्याने त्याच्या भाळी मात्र वाहने आणि चालक यांना गचके देत बिनधास्त तसेच पडून राहणे आणि सरते शेवटी ‘रस्त्याला खड्डा’ पासून ते ‘खड्ड्यांतून रस्ता’ या बिरुदावलीपर्यंत विस्तारणे नव्हते.
+      </p>
+
+      <p class="marathi-content font-marathi">
+        ज्याचे त्याचे नशीब!
+      </p>
+
+      <p class="marathi-content font-marathi">
+        ~ जयदीप@२०२४१२१९
+      </p>
+
+    </article>
+  </main>
+
+  <!-- Toast notification for link copying -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xl text-sm font-medium opacity-0 pointer-events-none transition-all duration-300 transform translate-y-3 z-50 flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400 dark:text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+    </svg>
+    <span id="toastMsg">लिंक कॉपी झाली!</span>
+  </div>
+
+  <script>
+    // Theme Management (Light / Dark mode)
+    const htmlElement = document.documentElement;
+    const themeToggleBtn = document.getElementById('themeToggle');
+
+    function applyInitialTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+    }
+
+    applyInitialTheme();
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = htmlElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Toast Notification Display Helper
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    let toastTimeout = null;
+
+    function showToast(message) {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+      }, 2500);
+    }
+
+    // Share Button Implementation
+    const shareButton = document.getElementById('shareButton');
+
+    shareButton.addEventListener('click', async () => {
+      const shareData = {
+        title: 'एका खड्डयाचे ‘पडणे’… आणि त्याचे नशीब',
+        text: 'एका खड्डयाचे ‘पडणे’… आणि त्याचे नशीब - पुणे आणि जेएम रस्त्यावरील एका खड्ड्याची रंजक गोष्ट.',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {
+          // If aborted by user or failed, ignore error or fallback quietly
+          if (err.name !== 'AbortError') {
+            copyFallback();
+          }
+        }
+      } else {
+        copyFallback();
+      }
+    });
+
+    function copyFallback() {
+      const dummyInput = document.createElement('input');
+      dummyInput.value = window.location.href;
+      document.body.appendChild(dummyInput);
+      dummyInput.select();
+      try {
+        document.execCommand('copy');
+        showToast('लिंक कॉपी झाली!');
+      } catch (err) {
+        showToast('कॉपी करणे शक्य झाले नाही');
+      }
+      document.body.removeChild(dummyInput);
+    }
+  </script>
+</body>
+</html>
