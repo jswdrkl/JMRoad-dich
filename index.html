@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>एका खड्डयाचे ‘पडणे’… आणि त्याचे नशीब</title>
 
-  <!-- Google Fonts: IBM Plex Sans & IBM Plex Sans Devanagari -->
+  <!-- Google Fonts: IBM Plex Sans & IBM Plex Sans Devanagari (Strictly Regular 400 & 500) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,13 +26,19 @@
   </script>
 
   <style>
+    /* Global styles enforcing non-bold weight and custom typography */
+    * {
+      font-weight: 400 !important;
+    }
+
     body {
       font-family: 'IBM Plex Sans Devanagari', 'IBM Plex Sans', sans-serif;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+      font-weight: 400;
     }
 
-    /* Justified text styling with non-breaking words for Marathi */
+    /* Justified text styling with non-breaking words across mobile and desktop */
     .marathi-content {
       text-align: justify;
       text-justify: inter-word;
@@ -40,11 +46,12 @@
       overflow-wrap: break-word;
       hyphens: none;
       -webkit-hyphens: none;
+      font-weight: 400;
     }
 
     /* SVG Keyframe Animations */
     @keyframes pulse-light {
-      0%, 100% { opacity: 0.3; transform: scale(0.9); }
+      0%, 100% { opacity: 0.35; transform: scale(0.9); }
       50% { opacity: 1; transform: scale(1.15); }
     }
 
@@ -66,7 +73,7 @@
 
     @keyframes gentle-sway {
       0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(2deg); }
+      50% { transform: rotate(1.8deg); }
     }
 
     @keyframes caution-flash {
@@ -108,7 +115,7 @@
     }
 
     .anim-tree {
-      animation: gentle-sway 4s ease-in-out infinite alternate;
+      animation: gentle-sway 4.5s ease-in-out infinite alternate;
       transform-origin: bottom center;
     }
 
@@ -120,7 +127,7 @@
 
 <body class="bg-[#F8F9FA] text-[#1E293B] dark:bg-[#0B1120] dark:text-[#E2E8F0] transition-colors duration-300 min-h-screen">
 
-  <!-- Top Minimal Action Bar containing ONLY Theme and Share Buttons -->
+  <!-- Top Minimal Action Bar containing Share and Theme buttons -->
   <header class="sticky top-0 z-40 backdrop-blur-md bg-[#F8F9FA]/80 dark:bg-[#0B1120]/80 border-b border-slate-200/70 dark:border-slate-800/80 transition-colors duration-300">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 py-3 flex justify-end items-center gap-2.5">
       <!-- Share Button -->
@@ -133,11 +140,11 @@
       <!-- Theme Toggle Button -->
       <button id="themeToggle" type="button" aria-label="थीम बदला" class="inline-flex items-center justify-center p-2.5 rounded-xl bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-95 transition-all">
         <!-- Sun icon (shown in dark mode) -->
-        <svg id="sunIcon" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg id="sunIcon" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
         </svg>
         <!-- Moon icon (shown in light mode) -->
-        <svg id="moonIcon" class="w-5 h-5 block dark:hidden text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg id="moonIcon" class="w-5 h-5 block dark:hidden text-slate-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
         </svg>
       </button>
@@ -145,10 +152,11 @@
   </header>
 
   <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    <article class="space-y-7 sm:space-y-8 text-base sm:text-lg leading-[1.8] sm:leading-[1.95] text-slate-800 dark:text-slate-200">
+    <!-- Increased typography size across body text and title; strictly regular non-bold font weight -->
+    <article class="space-y-8 sm:space-y-9 text-[1.2rem] sm:text-[1.32rem] leading-[1.95] sm:leading-[2.05] text-slate-800 dark:text-slate-200">
       
-      <!-- Title -->
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white pt-2 pb-1 marathi-content font-marathi">
+      <!-- Title (Regular font weight without bold) -->
+      <h1 class="text-3xl sm:text-4xl md:text-[2.65rem] leading-[1.4] text-slate-900 dark:text-white pt-2 pb-1 marathi-content font-marathi">
         एका खड्डयाचे ‘पडणे’… आणि त्याचे नशीब
       </h1>
 
@@ -184,7 +192,6 @@
 
           <!-- Sambhaji Garden Background Trees / Greenery -->
           <g class="anim-tree">
-            <!-- Green foliage layers -->
             <circle cx="90" cy="180" r="75" fill="#15803d" opacity="0.8" />
             <circle cx="160" cy="165" r="85" fill="#16a34a" opacity="0.9" />
             <circle cx="230" cy="190" r="70" fill="#22c55e" opacity="0.85" />
@@ -202,7 +209,7 @@
           <!-- Sambhaji Udyan Entrance Arch / Plaque Sign -->
           <g transform="translate(70, 130)">
             <rect x="0" y="0" width="135" height="38" rx="8" fill="#047857" stroke="#ffffff" stroke-width="2" />
-            <text x="67" y="24" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">संभाजी उद्यान</text>
+            <text x="67" y="24" font-size="14" fill="#ffffff" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">संभाजी उद्यान</text>
             <line x1="20" y1="38" x2="20" y2="90" stroke="#64748b" stroke-width="4" />
             <line x1="115" y1="38" x2="115" y2="90" stroke="#64748b" stroke-width="4" />
           </g>
@@ -210,12 +217,12 @@
           <!-- Famous Pune Street Sign: JM Road -->
           <g transform="translate(670, 95)">
             <line x1="80" y1="65" x2="80" y2="150" stroke="#475569" stroke-width="6" />
-            <rect x="0" y="10" width="160" height="55" rx="8" fill="#1e3a8a" stroke="#ffffff" stroke-width="2.5" />
-            <text x="80" y="32" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">जंगली महाराज रस्ता</text>
-            <text x="80" y="52" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="sans-serif">J. M. ROAD</text>
+            <rect x="0" y="10" width="160" height="55" rx="8" fill="#1e3a8a" stroke="#ffffff" stroke-width="2" />
+            <text x="80" y="32" font-size="12" fill="#93c5fd" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">जंगली महाराज रस्ता</text>
+            <text x="80" y="52" font-size="14" fill="#ffffff" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif">J. M. ROAD</text>
           </g>
 
-          <!-- Pavement / Footpath (Cobblestones of Pune Walkway) -->
+          <!-- Pavement / Footpath -->
           <rect x="0" y="235" width="850" height="35" fill="#cbd5e1" />
           <line x1="0" y1="270" x2="850" y2="270" stroke="#f1f5f9" stroke-width="2" />
 
@@ -236,7 +243,6 @@
               <circle cx="34" cy="46" r="4" fill="#94a3b8" />
               <circle cx="76" cy="46" r="8" fill="#0f172a" />
               <circle cx="76" cy="46" r="4" fill="#94a3b8" />
-              <!-- Headlight beam -->
               <polygon points="95,30 145,22 145,42" fill="#fef08a" opacity="0.35" />
             </g>
           </g>
@@ -247,16 +253,13 @@
               <circle cx="20" cy="18" r="9" fill="#0f172a" />
               <circle cx="65" cy="18" r="9" fill="#0f172a" />
               <path d="M20 18 L35 15 L45 5 L55 5 L60 18" stroke="#ef4444" stroke-width="5" fill="none" stroke-linecap="round" />
-              <!-- Rider helmet -->
               <circle cx="42" cy="-12" r="7" fill="#f59e0b" />
-              <!-- Scooter headlight -->
               <polygon points="12,10 -30,5 -30,22" fill="#fef08a" opacity="0.4" />
             </g>
           </g>
 
           <!-- Pothole Incident Zone & Municipal Repair Activity -->
           <g transform="translate(360, 310)">
-            
             <!-- The Sudden Pothole / Bhugdaad -->
             <ellipse cx="65" cy="45" rx="72" ry="24" fill="url(#holeGrad)" />
             <ellipse cx="65" cy="45" rx="60" ry="18" fill="#020617" />
@@ -268,7 +271,7 @@
             <line x1="45" y1="41" x2="85" y2="41" stroke="#111827" stroke-width="1.5" />
             <line x1="45" y1="49" x2="85" y2="49" stroke="#111827" stroke-width="1.5" />
 
-            <!-- Asphalt Steam / Repair Smoke (उकळत्या डांबराची वाफ) -->
+            <!-- Asphalt Steam / Repair Smoke -->
             <g fill="#94a3b8">
               <circle class="anim-steam-1" cx="45" cy="30" r="7" />
               <circle class="anim-steam-2" cx="70" cy="25" r="9" />
@@ -278,14 +281,13 @@
             <!-- Fresh Asphalt Patch Ring -->
             <ellipse cx="65" cy="45" rx="80" ry="28" fill="none" stroke="#000000" stroke-width="4" stroke-dasharray="8 4" opacity="0.6" />
 
-            <!-- Left Municipal Barricade (पडदानशीन ब्यारीकेड) -->
+            <!-- Left Municipal Barricade -->
             <g transform="translate(-55, -20)">
               <rect x="0" y="8" width="85" height="34" rx="4" fill="url(#barrierStripe)" stroke="#991b1b" stroke-width="2" />
               <rect x="10" y="42" width="6" height="32" fill="#475569" />
               <rect x="69" y="42" width="6" height="32" fill="#475569" />
               <rect x="3" y="72" width="20" height="4" rx="2" fill="#1e293b" />
               <rect x="62" y="72" width="20" height="4" rx="2" fill="#1e293b" />
-              <!-- Caution Light Flash -->
               <circle cx="42" cy="0" r="7" fill="#f59e0b" class="anim-light-amber" />
               <circle cx="42" cy="0" r="3" fill="#ffffff" />
             </g>
@@ -297,12 +299,11 @@
               <rect x="69" y="42" width="6" height="32" fill="#475569" />
               <rect x="3" y="72" width="20" height="4" rx="2" fill="#1e293b" />
               <rect x="62" y="72" width="20" height="4" rx="2" fill="#1e293b" />
-              <!-- Flashing Red Police / Alert Light -->
               <circle cx="42" cy="0" r="7" fill="#ef4444" class="anim-light-red" />
               <circle cx="42" cy="0" r="3" fill="#ffffff" />
             </g>
 
-            <!-- Traffic Caution Cone (वाहतूक नियंत्रण) -->
+            <!-- Traffic Caution Cones -->
             <g transform="translate(25, 45)">
               <polygon points="12,0 3,36 21,36" fill="#ea580c" />
               <polygon points="10,12 5,22 19,22 14,12" fill="#ffffff" />
@@ -319,11 +320,12 @@
           <!-- PMC Path Vibhag Action Banner Strip on Roadside -->
           <g transform="translate(390, 246)" class="anim-caution">
             <rect x="0" y="0" width="190" height="22" rx="4" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
-            <text x="95" y="15" font-size="11" font-weight="800" fill="#78350f" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">मनपा पथ विभाग • तात्काळ दुरुस्ती</text>
+            <text x="95" y="15" font-size="11" fill="#78350f" text-anchor="middle" font-family="'IBM Plex Sans Devanagari', sans-serif">मनपा पथ विभाग • तात्काळ दुरुस्ती</text>
           </g>
         </svg>
       </div>
 
+      <!-- Verbatim Body Paragraphs -->
       <p class="marathi-content font-marathi">
         तसे पुणेकरांना आणि पुणे शहरातील रस्त्यांना ‘खड्डे’ या प्रकाराचे काहीच नाविन्य नाहीये. किंबहुना सगळ्या राज्यातच ही परिस्थिती आहे. राजधानी मुंबई देखील यातून सुटलेली नाही. रस्ता म्हणजे खड्डे किंवा खड्ड्यांतून कसाबसा असलेला रस्ता हे आयुष्याचे गृहीत आहे.
       </p>
@@ -337,7 +339,7 @@
       </p>
 
       <p class="marathi-content font-marathi">
-        सी.ओ.ई.पी. अर्थात इंजीनीयरिंग कॉलेजपाशी सुरू होऊन; जिथे चालत रस्ता ओलांडण्यासाठी ‘पायऱ्या उरतून चढाव्या लागतात आणि वाहनांना रस्ता चढून उतरावा लागतो’ अशा डेक्कन जिमखान्यावरच्या ‘गरवारे अर्ध-भुयारी मार्ग’ या अद्वितीय ठिकाणी संपणाऱ्या या सुप्रसिद्ध रस्त्याचा ‘खड्डेविरहित रस्ता’ हा लौकिक सूर्यमालेपल्याड गेलेल्या व्हॉयेजर यानात बसवलेल्या गोल्ड रेकॉर्ड मधे देखील नोंदवलेला असणार इतका प्रसिद्ध आहे. १९६० च्या दशकात एका ‘जुन्या’ कॉन्ट्रॅक्टरने बनवलेला हा रस्ता चाळीस वर्षे गुळगुळीत होता. त्याची महती गुळगुळीत असली तरी भीतीदायक असल्यानेच दशकभरापूर्वी पालिकेने तो रुंद करून नव्याने बांधला तेव्हाही बरेच चर्वतिचर्वण झाले होते आणि बांधणाऱ्या कंत्राटदाराने देखील ते काम आरशासारखे चकचकीत करून साक्षात पुणेकरांना खजील केले!
+        सी.ओ.ई.पी. अर्थात इंजीनीयरिंग कॉलेजपाशी सुरू होऊन; जिथे चालत रस्ता ओलांडण्यासाठी ‘पायऱ्या उरतून चढाव्या लागतात आणि वाहनांना रस्ता चढून उतरावा लागतो’ अशा डेक्कन जिमखान्यावरच्या ‘गरवारे अर्ध-भुयारी मार्ग’ या अद्वितीय ठिकाणी संपणाऱ्या या सुप्रसिद्ध रस्त्याचा ‘खड्डेविरहित रस्ता’ हा लौकिक सूर्यमालेपल्याड गेलेल्या व्हॉयेजर यानात बसवलेल्या गोल्ड record मधे देखील नोंदवलेला असणार इतका प्रसिद्ध आहे. १९६० च्या दशकात एका ‘जुन्या’ कॉन्ट्रॅक्टरने बनवलेला हा रस्ता चाळीस वर्षे गुळगुळीत होता. त्याची महती गुळगुळीत असली तरी भीतीदायक असल्यानेच दशकभरापूर्वी पालिकेने तो रुंद करून नव्याने बांधला तेव्हाही बरेच चर्वतिचर्वण झाले होते आणि बांधणाऱ्या कंत्राटदाराने देखील ते काम आरशासारखे चकचकीत करून साक्षात पुणेकरांना खजील केले!
       </p>
 
       <p class="marathi-content font-marathi">
@@ -360,7 +362,7 @@
   </main>
 
   <!-- Toast notification for link copying -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xl text-sm font-medium opacity-0 pointer-events-none transition-all duration-300 transform translate-y-3 z-50 flex items-center gap-2">
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xl text-sm opacity-0 pointer-events-none transition-all duration-300 transform translate-y-3 z-50 flex items-center gap-2">
     <svg class="w-4 h-4 text-emerald-400 dark:text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
     </svg>
@@ -419,7 +421,6 @@
         try {
           await navigator.share(shareData);
         } catch (err) {
-          // If aborted by user or failed, ignore error or fallback quietly
           if (err.name !== 'AbortError') {
             copyFallback();
           }
